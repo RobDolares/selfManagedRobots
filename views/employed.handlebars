@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Employed Robots</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>User Directory</h1>
+  </header>
+  <main>
+    <div id="status">
+      <a href="/unemployed" class="employStatus">Unemployed robots</a>
+    </div>
+    <div class="backHome">
+      <a href="/">Back to Directory</a>
+    </div>
+    <div class="dirContainer">
+      {{#users}}
+        <div class="userContainer">
+          <div class="headshot">
+            <a href="/bio/{{username}}"><img src="{{avatar}}" alt=""></a>
+          </div>
+          <h2 class="userName">{{name}}</h2>
+          <p>{{job}}</p>
+          <p>{{company}}</p>
+        </div>
+      {{/users}}
+    </div>
+  </main>
+</body>
+
+</html>

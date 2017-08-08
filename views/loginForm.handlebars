@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+</head>
+
+<body>
+  <h1>Login</h1>
+
+
+
+  {{#if failed}}
+    login failed
+  {{/if}}
+  <form action="/login" method="post">
+    username: <input type="text" name="username" /><br />
+    Password: <input type="password" name="password" /><br />
+    <button>Login</button>
+  </form>
+  <a href="/register">Register</a>
+</body>
+
+</html>
