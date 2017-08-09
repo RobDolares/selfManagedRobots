@@ -24,9 +24,9 @@ const User = require('./models/user');
 
 // configure passport
 passport.use(
-  new LocalStrategy(function(username, password, done) {
-    console.log('LocalStrategy', username, password);
-    User.authenticate(username, password)
+  new LocalStrategy(function(email, password, done) {
+    console.log('LocalStrategy', email, password);
+    User.authenticate(email, password)
       // success!!
       .then(user => {
         if (user) {

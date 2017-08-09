@@ -1,35 +1,38 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const LocalStrategy = require("passport-local").Strategy;
 
 // get a reference to Schema
 const Schema = mongoose.Schema;
 
 // create a schema for a user
-const userSchema = mongoose.Schema({
-  address: {
-    city: String,
-    country: String
+
+// const userSchema = new Schema({
+//   id: {type: String},
+//   username : {type: String, required: true},
+//   name : {type: String, required: true},
+//   email : {type: String, required: true},
+// });
+
+const userSchema = new Schema({
+  id : {type: String},
+  username : {type: String, required: true},
+  name : {type: String, required: true},
+  avatar : {type: String},
+  email : {type: String, required: true},
+  university : {type: String},
+  job : {type: String},
+  company : {type: String},
+  skills : [{type: String}],
+  phone : {type: Number},
+  address : {
+    street_num : {type: Number},
+    street_name : {type: String},
+    city : {type: String},
+    state_or_province : {type: String},
+    postal_code : {type: Number},
+    country : {type: String}
   },
-  avatar: String,
-  company: String,
-  email: String,
-  id: Number,
-  job: String,
-  name: String,
-  phone: String,
-  skills: [String],
-  university: String,
-  username: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  passwordHash: {
-    type: String,
-    required: true
-  }
+  passwordHash: {type: String}
 });
 
 userSchema.methods.setPassword = function(password) {

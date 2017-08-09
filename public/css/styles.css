@@ -145,3 +145,21 @@ ul {
   text-decoration: none;
   color: white;
 }
+
+/*************  Registration  **************/
+
+#registerForm{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#registerForm input{
+  font-size: 1em;
+  height: 30px;
+}
+
+#regSubmitButton {
+  width: 70px;
+}
