@@ -12,9 +12,12 @@
     <h1>User Directory</h1>
   </header>
   <main>
+    <div class="currentUser">
+      <h1>Welcome, {{user.name}}</h1>
+    </div>
     <div class="login">
-      <button><a href="/login">User Login</a></button>
-      <button><a href="/register">Register</a></button>
+      <button><a href="/edit?id={{user._id}}">Edit Account</a></button>
+      <button><a href="/logout">Log out</a></button>
     </div>
     <div id="status">
       <a href="/employed" class="employStatus">Employed robots</a>
@@ -22,11 +25,12 @@
     </div>
     <div class="dirContainer">
       {{#users}}
+      <a href="/bio/{{username}}">
         <div class="userContainer">
           <div class="headshot">
-            <a href="/bio/{{username}}"><img src="{{avatar}}" alt=""></a>
+            <img src="{{avatar}}" alt="">
           </div>
-          <h2 class="userName">{{name}}</h2>
+          <a href="/bio/{{username}}"><h2 class="userName">{{name}}</h2></a>
           <p>{{job}}</p>
           <p>{{company}}</p>
         </div>

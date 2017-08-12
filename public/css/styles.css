@@ -19,6 +19,10 @@ main {
 margin: 0 10%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .dirContainer {
   display: flex;
   flex-wrap: wrap;
@@ -161,5 +165,23 @@ ul {
 }
 
 #regSubmitButton {
+  width: 70px;
+}
+
+/*************** Edit Form ****************/
+
+#editForm {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#editForm input{
+  font-size: 1em;
+  height: 30px;
+}
+
+#editSubmit{
   width: 70px;
 }

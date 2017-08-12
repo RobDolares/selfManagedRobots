@@ -20,19 +20,17 @@ mongoose.Promise= require('bluebird');
 
 const User = require('./models/user');
 
-
-
 // configure passport
 passport.use(
-  new LocalStrategy(function(email, password, done) {
-    console.log('LocalStrategy', email, password);
-    User.authenticate(email, password)
+  new LocalStrategy(function(username, password, done) {
+    console.log('LocalStrategy', username, password);
+    User.authenticate(username, password)
       // success!!
       .then(user => {
         if (user) {
           done(null, user);
         } else {
-          done(null, null, { message: 'There was no user with this email and password.' });
+          done(null, null, { message: 'There was no user with this username and password.' });
         }
       })
       // there was a problem
@@ -43,7 +41,7 @@ passport.use(
 // store the user's id in the session
 passport.serializeUser((user, done) => {
   console.log('serializeUser');
-  done(null, user.id);
+  done(null, user);
 });
 
 // get the user from the session based on the id

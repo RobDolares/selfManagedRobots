@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Update Profile</title>
+
+  </head>
+  <body>
+
+  <h1>{{user.name}}</h1>
+
+    <form action="/update" method="post">
+      <table id="editForm">
+        <tr>
+          <td>
+            <label for="username">Username</label>
+          </td>
+          <td>
+            <input type="text" id="username" name="username" value="{{user.username}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="name">Name</label>
+          </td>
+          <td>
+            <input type="text" id="name" name="name" value="{{user.name}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="avatar">Avatar</label>
+          </td>
+          <td>
+            <input type="text" id="avatar" name="avatar" value="{{user.avatar}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+          <td>
+            <input type="text" id="email" name="email" value="{{user.email}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="university">University</label>
+          </td>
+          <td>
+            <input type="text" id="university" name="university" value="{{user.university}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="job">Job</label>
+          </td>
+          <td>
+            <input type="text" id="job" name="job" value="{{user.job}}" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="company">Company</label>
+          </td>
+          <td>
+            <input type="text" id="company" name="company" value="{{user.company}}" />
+          </td>
+        </tr>
+
+      </table>
+
+
+      {{#if user._id}}
+        <input type="hidden" name="id" value="{{user._id}}" />
+      {{/if}}
+
+      <button id="editSubmit">Update</button>
+    </form>
+  </body>
+</html>

@@ -1,19 +1,14 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
+const LocalStrategy = require("passport-local").Strategy;
 
 // get a reference to Schema
 const Schema = mongoose.Schema;
 
 // create a schema for a user
-
-// const userSchema = new Schema({
-//   id: {type: String},
-//   username : {type: String, required: true},
-//   name : {type: String, required: true},
-//   email : {type: String, required: true},
-// });
-
 const userSchema = new Schema({
+  // _id: {type: String},
   id : {type: String},
   username : {type: String, required: true},
   name : {type: String, required: true},
@@ -45,10 +40,10 @@ userSchema.methods.validatePassword = function(password) {
 };
 
 // static method to authenticate a user
-userSchema.statics.authenticate = function(email, password) {
+userSchema.statics.authenticate = function(username, password) {
   return (
     User.findOne({
-      email: email
+      username: username
     })
     // validate the user's password
     .then(user => {
