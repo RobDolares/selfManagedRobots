@@ -24,15 +24,6 @@ res.render('home', {
   })
 });
 
-//
-// routes.get('/', (req, res) => {
-//   User.find()
-//     .then((data) => {res.render('home', {
-//       users: data
-//     });
-//     })
-// })
-
 routes.get('/login', (req, res) => {
   res.render('loginForm', {failed: req.query.failed});
 });
