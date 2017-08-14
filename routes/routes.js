@@ -102,7 +102,7 @@ routes.get('/bio/:username', (req, res) => {
 
 // log out!!!!!
 
-routes.get('/logout', function(req, res) {
+routes.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
 });

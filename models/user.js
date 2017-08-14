@@ -8,7 +8,6 @@ const Schema = mongoose.Schema;
 
 // create a schema for a user
 const userSchema = new Schema({
-  // _id: {type: String},
   id : {type: String},
   username : {type: String, required: true},
   name : {type: String, required: true},
@@ -54,7 +53,6 @@ userSchema.statics.authenticate = function(username, password) {
       }
     })
   );
-  //.then(user => console.log('matched user: ', user));
 };
 
 // create a model for a User
